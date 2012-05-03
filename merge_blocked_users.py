@@ -33,7 +33,7 @@ def mergeUser(site, olduser, newuser, delete=False):
         predata['deleteuser'] = "0"
     predata['token'] = site.getToken(sysop=True)
 
-    (r, text) = site.postForm('/wiki/Special:UserMerge', predata, sysop=True)
+    (r, text) = site.postForm('/Special:UserMerge', predata, sysop=True)
     if ('Merge from' in text) and ('is complete' in text):
         merge_succeed = True
     else:
@@ -51,7 +51,7 @@ def main(args):
     else:
         initial_user = args[0]
 
-    nb = wikipedia.Site('en', "noisebridge")
+    nb = wikipedia.Site('fi', "geowiki")
     spam_user = userlib.User(nb, "SpammerHellDontDelete")
 
     ul = userlistpage.user_list_since_user(nb, initial_user).getUsers()

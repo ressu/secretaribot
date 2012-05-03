@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# encoding: UTF-8
 ##
 # death_to_wikispammers.py - helps quickly delete spam in
 # spuriously created userpages
@@ -25,7 +26,7 @@ from userlistpage import user_list_since_user
 
 
 def main(args):
-    noisebridge = wikipedia.Site('en')
+    noisebridge = wikipedia.Site('fi')
     if len(args) > 0:
         lastUser = args[0]
     else:

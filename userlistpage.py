@@ -68,11 +68,11 @@ class UserListPage:
         self.site = site
 
     def getUsers(self):
-        ula = cssselect.CSSSelector('div.mw-spcontent > ul > li > a')
+        ula = cssselect.CSSSelector('div#bodyContent > ul > li > a')
         list_links = ula(self.lxml_root)
         total_users = []
         for link in list_links:
-            if 'User:' not in link.attrib['href']:
+            if 'K%C3%A4ytt%C3%A4j%C3%A4:' not in link.attrib['href']:
                 continue
             new_user = UserFromUserList(self.site, link.text)
             total_users.append(new_user)
